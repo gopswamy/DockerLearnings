@@ -14,4 +14,4 @@
 
     If you want to embed images, this is how you do it:
 
-    ![Image of Architecture](/home/gopinath/Desktop/image.jpg)
+    ![Image of Architecture](https://github.com/gopswamy/DockerLearnings/blob/master/MultiContainer/image.JPG)
