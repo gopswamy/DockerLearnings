@@ -12,7 +12,7 @@
         - The frontend request are routed to React server
         - The backend request is routed to Express server which is connected to a Redis and Postgres server
 
-    If you want to embed images, this is how you do it:
+    Architecture:
     
 
 ![Image of Architecture](https://github.com/gopswamy/DockerLearnings/blob/master/MultiContainer/image.JPG)
