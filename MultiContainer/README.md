@@ -16,3 +16,7 @@
     
 
 ![Image of Architecture](https://github.com/gopswamy/DockerLearnings/blob/master/MultiContainer/image.JPG)
+
+The images are build and passed to Travis CI for testing purposes. The images are pushed to docker hub which would be pulled by AWS to run our server.
+
+    - Container definitions file is written for AWS to run the Docker image

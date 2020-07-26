@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t gopswamy/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true gopswamy/react-test npm test
+
+after_success:
+  - docker build -t gopswamy/multi-client ./client
+  - docker build -t gopswamy/multi-nginx ./nginx
+  - docker build -t gopswamy/multi-server ./server
+  - docker build -t gopswamy/multi-worker ./worker
+  # Login to docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Push images to docker hub
+  - docker push gopswamy/multi-client
+  - docker push gopswamy/multi-nginx
+  - docker push gopswamy/multi-server
+  - docker push gopswamy/multi-worker
